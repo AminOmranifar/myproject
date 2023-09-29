@@ -1,0 +1,648 @@
+@import "basic";
+
+.main {
+  height: max-content;
+  padding: 50px 0;
+  background: linear-gradient(rgba($bg-1, 0.8) 50%, rgba($bg-1, 0.8)),
+    url("../pic/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+// Start of summery slider
+.main__slider-title {
+  color: $light-blue-1;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 7.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 800px;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 320px !important;
+  @include flex();
+
+  &-container {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    @include sizing(calc(100% - 50px), 50%);
+
+    .bio-slider-title {
+      color: $light-blue-1;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 109.5%; /* 32.85px */
+      letter-spacing: 0.45px;
+    }
+
+    .bio-slider-text {
+      color: $white;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 30px */
+      letter-spacing: 0.3px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.slide-btn {
+  display: block;
+  @include sizing(120px, 40px);
+  background-image: url("../pic/home page/btn-bg.svg");
+  @include flex();
+  color: #00fff0;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.swiper-slide img {
+  display: block;
+  object-fit: cover;
+  height: 700px;
+}
+
+.swiper-pagination {
+  bottom: 70px !important;
+}
+
+.swiper-wrapper {
+  padding: 0px 0 80px 0;
+}
+
+.swiper-pagination-bullet {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: $light-blue-1 !important;
+}
+
+.prev-btn {
+  position: absolute;
+  bottom: 80px;
+  left: 41%;
+}
+.next-btn {
+  position: absolute;
+  bottom: 80px;
+  right: 41%;
+}
+
+.skills-title {
+  color: $light-blue-1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.skills-slide-list {
+  margin-top: 30px;
+  @include grid(repeat(2, 1fr), auto);
+  row-gap: 40px;
+
+  &__item {
+    @include flex(row, center, flex-start);
+    column-gap: 10px;
+    color: $white;
+    &__img {
+      display: block;
+      width: 35px !important;
+      height: 35px !important;
+      object-fit: cover;
+    }
+
+    &:last-child {
+      img {
+        width: 35px !important;
+        height: 20px !important;
+      }
+    }
+
+    &:nth-child(6) {
+      img {
+        transform: scale(2);
+      }
+    }
+  }
+}
+
+.skills-btn {
+  margin-top: 150px;
+}
+
+.history-btn {
+  margin-top: 220px;
+}
+
+.current-btn {
+  margin-top: 320px;
+}
+
+.position-btn {
+  margin-top: 200px;
+}
+// End of summery slider
+// Start of project slider
+.main__project {
+  position: relative;
+  @include sizing(100%, 399px);
+  z-index: 99;
+  background: url("../pic/home page/project-bg.png"), #111 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 80px;
+  border-top: 1px solid $light-blue-1;
+  border-bottom: 1px solid $light-blue-1;
+  margin-bottom: 300px;
+
+  &__title {
+    color: $white;
+    letter-spacing: 1px;
+    padding: 30px 0;
+    font-size: 2rem;
+  }
+
+  &__slider {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @include sizing(1015px, 500px);
+
+    &__wrapper {
+      @include sizing(100%, max-content);
+      @include flex(row, center, flex-start);
+      column-gap: 50px;
+      overflow-x: hidden;
+
+      &__slide {
+        @include sizing(480px, 400px);
+        min-width: 480px;
+        overflow: hidden;
+        border-radius: 30px;
+      }
+      &__slide-img {
+        @include sizing(100%, calc(100% - 100px));
+        @include flex();
+
+        &__img {
+          @include sizing(100%, 100%);
+        }
+      }
+      &__slide-container {
+        @include sizing(100%, 100px);
+        background-color: $white;
+        padding: 10px 30px;
+
+        .main__project__wrapper__slide-container__title {
+          color: #000;
+          font-family: Roboto;
+          font-size: 35.327px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+        .main__project__wrapper__slide-container__text {
+          color: rgba(87, 87, 87, 0.44);
+          font-family: Roboto;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+
+    &__footer {
+      @include sizing(max-content, max-content);
+      margin: 20px auto;
+
+      &__pagination {
+        @include flex();
+        column-gap: 5px;
+        &__circle {
+          @include sizing(18px, 18px);
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.39);
+          background: transparent;
+          transition: all 0.2s ease-in-out;
+
+          &.active {
+            background-color: $light-blue-1;
+          }
+        }
+      }
+      &__btn {
+        @include flex();
+        @include sizing(130px, auto);
+        padding: 10px;
+        border: 1px solid $light-blue-1;
+        border-radius: 20px;
+        color: $white;
+        margin: 20px 0;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      &__text {
+        color: $white;
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+  }
+}
+// End of Project Slider
+// Start of about me section
+.main__about-me {
+  @include sizing(100%, max-content);
+  margin: 20px 0;
+
+  &__title {
+    color: $white;
+    margin-left: 80px;
+    font-size: 2rem;
+  }
+
+  &__container {
+    @include flex();
+    column-gap: 20px;
+    margin-top: 30px;
+
+    &__card {
+      @include sizing(20vw, 20vw);
+      border-radius: 29px;
+      border: 2px solid #02595c;
+      padding: 10px;
+
+      &__card-header {
+        padding-top: 10px;
+
+        &__icon-box {
+          border: 1px solid #898989;
+          @include flex();
+          border-radius: 50%;
+          @include sizing(60px, 60px);
+          padding: 10px;
+
+          &__icon {
+            display: block;
+            transform: scale(0.8);
+          }
+        }
+      }
+
+      &__card-body {
+        margin-top: 30px;
+
+        &__title {
+          color: $light-blue-1;
+          letter-spacing: 1px;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+
+        &__text {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+// End of about me section
+// Start of Sample work slider
+.main__sample-work {
+  margin-bottom: 80px;
+  width: 100%;
+  &__wrapper {
+    margin: 0 auto;
+    width: 84%;
+    overflow-x: hidden;
+    @include flex(row, center, flex-start);
+    column-gap: 20px;
+    &__slide {
+      position: relative;
+      @include sizing(310px, 314px);
+      &__container {
+        @include sizing(310px, 314px);
+        background-image: url("../pic/home page/Rectangle\ 1489.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &__btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include sizing(68px, 67px);
+        border: 3px solid $light-blue-1;
+        @include flex();
+        border-radius: 10px;
+      }
+    }
+  }
+  &__pagination-box {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: max-content;
+    @include flex();
+    column-gap: 10px;
+
+    &__pagination {
+      @include flex();
+      column-gap: 5px;
+
+      &__pagination-icon {
+        @include sizing(15px, 15px);
+        border-radius: 50%;
+        border: 1px solid #898989;
+        transition: background-color 0.2s;
+
+        &.active {
+          background-color: $light-blue-1;
+        }
+      }
+    }
+  }
+}
+// End of Sample work slider
+@media screen and (max-width: 1200px) {
+  .next-btn {
+    right: 40%;
+  }
+  .prev-btn {
+    left: 40%;
+  }
+  .main__about-me__container__card__card-body {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 1056px) {
+  .next-btn {
+    right: 38%;
+  }
+  .prev-btn {
+    left: 38%;
+  }
+  .main__project__slider__wrapper {
+    column-gap: 40px;
+  }
+  .main__project__slider {
+    width: 800px;
+  }
+  .main__project__slider__wrapper__slide {
+    width: 380px;
+    min-width: 380px;
+    height: 330px;
+  }
+  .main__project__slider__wrapper__slide-img {
+    height: calc(100% - 100px);
+  }
+  .main__sample-work__wrapper {
+    column-gap: 30px;
+    padding-right: 2px;
+  }
+  .main__sample-work__wrapper__slide {
+    @include sizing(210px, 214px);
+
+    &__container {
+      @include sizing(210px, 213px);
+    }
+    &__btn {
+      @include sizing(45px, 45px);
+
+      svg {
+        width: 13px;
+      }
+    }
+  }
+  .main__about-me__container {
+    margin: 0 auto;
+    width: max-content;
+    @include grid(repeat(3, 1fr), repeat(2, 1fr));
+    row-gap: 20px;
+  }
+  .main__about-me__container__card__card-header {
+    padding-top: 0px;
+  }
+  .main__about-me__container__card {
+    @include sizing(25vw, 25vw);
+    @include flex(column, flex-start, space-between);
+
+    &__card-body {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      grid-column: 2/3;
+    }
+  }
+}
+@media screen and (max-width: 840px) {
+  .main__sample-work__wrapper {
+    column-gap: 10px;
+    padding-right: 2px;
+  }
+  .main__slider-title {
+    font-size: 2rem;
+  }
+  .next-btn {
+    right: 36%;
+  }
+  .prev-btn {
+    left: 36%;
+  }
+  .main__project__slider__wrapper__slide {
+    width: 270px;
+    min-width: 270px;
+    height: 270px;
+  }
+  .main__project {
+    height: 289px;
+  }
+
+  .main__project__slider__wrapper {
+    margin: 0 auto;
+    column-gap: 20px;
+    width: 560px;
+  }
+  .main__project__wrapper__slide-container__title {
+    font-size: 1.5rem !important;
+  }
+  .main__project__wrapper__slide-container__text {
+    font-size: 1rem !important;
+  }
+  .main__project__slider__wrapper__slide-img {
+    height: calc(100% - 80px);
+  }
+  .main__about-me__container {
+    margin-top: 20px;
+    @include grid(repeat(2, 1fr), repeat(2, 1fr));
+  }
+
+  .main__about-me__container__card {
+    @include sizing(250px, 250px);
+    &:last-child {
+      grid-column: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .main__slider-title {
+    font-size: 1.5rem;
+  }
+  .swiper-slide {
+    max-width: 250px !important;
+  }
+  .swiper-slide-svg {
+    transform: scaleX(0.9);
+  }
+  .next-btn {
+    right: 30%;
+    bottom: 40px;
+    svg {
+      width: 20px;
+    }
+  }
+  .prev-btn {
+    left: 30%;
+    bottom: 40px;
+    svg {
+      width: 20px;
+    }
+  }
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    margin: 0 2px !important;
+  }
+  .swiper-slide img {
+    height: 650px;
+  }
+  .slide-btn {
+    margin-top: 10px;
+  }
+  .swiper-pagination {
+    bottom: 30px !important;
+  }
+  .history-btn {
+    margin-top: 130px;
+  }
+  .current-btn {
+    margin-top: 295px;
+  }
+  .position-btn {
+    margin-top: 130px;
+  }
+  .skills-btn {
+    margin-top: 180px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main__about-me__container__card {
+    @include sizing(200px, 200px);
+  }
+
+  .main__about-me__container__card__card-header__icon-box {
+    @include sizing(40px, 40px);
+  }
+  .power-icon {
+    display: block;
+    width: 20px !important;
+  }
+  .main__about-me__container__card__card-body__title {
+    font-size: 1rem;
+  }
+  .main__about-me__container__card__card-header__icon-box__icon {
+    width: 25px;
+  }
+  .main__about-me__container__card__card-body__text {
+    font-size: 0.8rem;
+  }
+  .main__project__slider__wrapper {
+    width: 280px !important;
+    justify-content: flex-start;
+  }
+
+  .main__project__slider__wrapper {
+    margin: 0 auto;
+    column-gap: 20px;
+    width: 560px;
+  }
+  .main__project__wrapper__slide-container__title {
+    font-size: 1.5rem !important;
+  }
+  .main__project__wrapper__slide-container__text {
+    font-size: 1rem !important;
+  }
+  .main__project__slider__wrapper__slide-img {
+    height: calc(100% - 80px);
+  }
+}
+@media screen and (max-width: 515px) {
+  .main__sample-work__pagination-box__pagination {
+    column-gap: 2px;
+  }
+  .main__sample-work__pagination-box__pagination__pagination-icon {
+    width: 10px;
+    height: 10px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .main__about-me__container {
+    gap: 5px;
+  }
+  .main__about-me__container__card {
+    @include sizing(140px, 170px);
+  }
+  .main__about-me__container__card__card-body__text {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 410px) {
+  .next-btn {
+    right: 25%;
+  }
+  .prev-btn {
+    left: 25%;
+  }
+}
+@media screen and (max-width: 340px) {
+  .next-btn {
+    right: 20%;
+  }
+  .prev-btn {
+    left: 20%;
+  }
+}

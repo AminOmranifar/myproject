@@ -1,0 +1,22 @@
+@import "../../../../sass/basic";
+
+// start of header pop down
+.header__pop-down {
+  position: absolute;
+  top: 90%;
+  right: 70px;
+  transform: translateY(-50%);
+  @include flex();
+  column-gap: 10px;
+
+  &__text {
+    color: $white;
+    margin-bottom: 3px;
+  }
+}
+//   start of header pop down
+@media screen and (max-width: 800px) {
+  .header__pop-down {
+    right: 20px;
+  }
+}

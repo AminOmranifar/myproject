@@ -1,0 +1,164 @@
+@import "../../../../sass/basic";
+
+// start of desktop navbar
+.mobile-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include sizing(100%, max-content);
+  background-color: #000;
+  @include flex(row, center, space-between);
+  padding-left: 30px;
+  z-index: 9;
+  display: none;
+  z-index: 9999999999999999999999999999999999999999;
+
+  &__logo-box {
+    padding-right: 30px;
+    border-radius: 0px 0px 100px 0px;
+    border-right: 8px solid #fff;
+    background: #000;
+    @include flex();
+
+    &__text {
+      color: $white;
+      font-family: $font-LavishlyYours;
+      font-size: 2.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 3.08px;
+
+      &__span {
+        color: $light-blue-1;
+      }
+    }
+  }
+
+  &__home-page {
+    width: 30%;
+
+    &__icon {
+      width: 35px;
+      color: $white;
+    }
+
+    &.active {
+      svg {
+        color: $light-blue-1;
+      }
+    }
+  }
+
+  &__open-button {
+    all: unset;
+    cursor: pointer;
+  }
+
+  &__slide-menu {
+    position: fixed;
+    top: 0;
+    left: -1000px;
+    @include sizing(100%, 100vh);
+    z-index: 999999999999999999999;
+    background-color: #1e1e1e;
+    transition: left 0.4s;
+
+    &.show {
+      left: 0;
+    }
+
+    &__header {
+      @include sizing(100%, auto);
+      @include flex();
+
+      .slide__title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &__close-btn {
+        all: unset;
+        @include sizing(10px, 10px);
+        position: absolute;
+        right: 30px;
+        cursor: pointer;
+        padding: 10px;
+        background-color: $light-blue-1;
+        border-radius: 50%;
+        @include flex();
+
+        img {
+          display: block;
+          width: 8px;
+          margin-right: 2px;
+        }
+      }
+    }
+
+    &__body {
+      margin-top: 30px;
+      width: 80%;
+
+      &__list {
+        position: relative;
+        @include sizing(100%, max-content);
+        @include flex(column, center, center);
+        row-gap: 10px;
+
+        &__item {
+          width: 70%;
+          padding: 15px;
+
+          border-radius: 5px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            @include sizing(20px, 48px);
+            transform: translate(-50%, -15px);
+            background-color: $light-blue-1;
+            border-radius: 5px;
+            visibility: hidden;
+          }
+
+          &.active {
+            background-color: $light-blue-1;
+            &::after {
+              visibility: visible;
+            }
+            a {
+              color: $black;
+            }
+          }
+        }
+
+        &__link {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mobile-navbar {
+    display: flex;
+  }
+}
+@media screen and (max-width: 400px) {
+  .mobile-navbar__home-page {
+    width: max-content;
+  }
+  .mobile-navbar {
+    padding: 0 10px;
+  }
+  .mobile-navbar__slide-menu__header__close-btn {
+    right: 10px;
+  }
+  .mobile-navbar__slide-menu__body {
+    width: 100%;
+  }
+}

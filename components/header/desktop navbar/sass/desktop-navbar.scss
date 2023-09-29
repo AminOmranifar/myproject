@@ -1,0 +1,126 @@
+@import "../../../../sass/basic";
+
+// start of desktop navbar
+.header__desktop-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0px 0px 44px 0px;
+  border-bottom: 3px solid #40f8ff;
+  background: rgba(0, 0, 0, 0.82);
+  @include flex(row, center, space-between);
+  z-index: 9;
+
+  &__logo-box {
+    @include sizing(25.8%, 84px);
+    width: max-content;
+    padding: 0 35px;
+    border-radius: 0px 0px 100px 0px;
+    border-right: 10px solid #fff;
+    background: #00040c;
+    @include flex();
+
+    &__text {
+      margin: 0;
+      color: $white;
+      font-family: $font-LavishlyYours;
+      font-size: 77px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 3.08px;
+
+      &__span {
+        color: $light-blue-1;
+      }
+    }
+  }
+
+  &__list-menu {
+    width: 74.2%;
+    padding-right: 30px;
+    @include flex(row, center, space-evenly);
+
+    &__home-icon {
+      width: 40px;
+    }
+
+    &__link {
+      color: $white;
+    }
+
+    &__item {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include sizing(0px, 2px);
+        background-color: $white;
+        transition: all 0.4s;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &:first-child,
+      &.active {
+        &::after {
+          all: unset;
+        }
+      }
+    }
+  }
+}
+// end of desktop navbar
+
+@media screen and (max-width: 1050px) {
+  .header__desktop-navbar__list-menu__link {
+    font-size: 0.9rem;
+
+    &:first-child {
+      svg {
+        width: 35px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 960px) {
+  .header__desktop-navbar__logo-box__text {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .header__desktop-navbar__logo-box__text {
+    font-size: 3rem;
+  }
+  .header__desktop-navbar__logo-box {
+    padding: 0 25px;
+    padding-left: 10px;
+  }
+  .header__desktop-navbar__list-menu {
+    width: 90%;
+    padding-right: 0;
+  }
+  .header__desktop-navbar__list-menu__link {
+    font-size: 0.8rem;
+
+    &:first-child {
+      svg {
+        width: 30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .header__desktop-navbar {
+    display: none;
+  }
+}

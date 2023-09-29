@@ -1,0 +1,46 @@
+@import "../../../../sass/basic";
+
+// start of header slider
+.header__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include sizing(100%, 100%);
+  overflow: hidden;
+  scroll-behavior: smooth;
+
+  &__slide {
+    @include sizing(100%, 100%);
+    &__image {
+      @include sizing(100%, 100%);
+      object-fit: cover;
+    }
+  }
+}
+// start of counter container
+.header__counter-container {
+  position: absolute;
+  top: 50%;
+  right: 70px;
+  transform: translateY(-50%);
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  &__circle-icon {
+    @include sizing(15px, 15px);
+    border: 1px solid rgba($white, 0.7);
+    border-radius: 50%;
+
+    &.active {
+      background-color: $light-green;
+    }
+  }
+}
+// end of counter container
+@media screen and (max-width: 800px) {
+  .header__counter-container {
+    right: 20px;
+  }
+}

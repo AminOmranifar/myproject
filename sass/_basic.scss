@@ -1,0 +1,88 @@
+// add fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Merriweather+Sans&display=swap");
+
+$font-LavishlyYours: "Lavishly Yours", cursive;
+$font-MerriweatherSans: "Merriweather Sans", sans-serif;
+
+// variable
+
+$bg-1: #030e26;
+$black: #000;
+$white: #fff;
+$light: #eee;
+$light-blue-1: #40f8ff;
+$light-blue-2: #1da1f2;
+$light-blue-3: #28a0d3;
+$dark-blue-1: #0a66c2;
+$dark-blue-2: #1877f2;
+$light-green: #01e4bc;
+$dark-pink: #c32361;
+
+// mixin
+
+@mixin flex($direction: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin grid($template-column, $template-row) {
+  display: grid;
+  grid-template-columns: $template-column;
+  grid-template-rows: $template-row;
+}
+
+@mixin sizing($width: 100px, $height: 100px) {
+  width: $width;
+  height: $height;
+}
+
+// reset
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  position: relative;
+  @include sizing(100%, 100vh);
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: $font-MerriweatherSans;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.light-blue-text {
+  color: $light-blue-1;
+}
+
+.page-link-active {
+  color: $light-blue-1 !important;
+}
+
+main {
+  @include sizing(100%, 100vh);
+  background: linear-gradient(rgba($bg-1, 0.8) 50%, rgba($bg-1, 0.8)),
+    url("../pic/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}

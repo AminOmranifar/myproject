@@ -1,0 +1,117 @@
+@import "basic";
+
+.main {
+  height: max-content;
+  padding: 50px;
+  @include flex(column, center, center);
+  &__container {
+    width: 800px;
+    @include grid(repeat(3, 1fr), repeat(3, 1fr));
+    row-gap: 50px;
+    column-gap: 20px;
+
+    &__card {
+      width: 100%;
+      min-width: 250px;
+      max-width: 300px;
+      padding: 20px;
+      background-color: $light-blue-2;
+      @include flex(row, center, space-around);
+      color: $light;
+      border-radius: 10px;
+
+      &__title-box {
+        @include flex(column, flex-start, flex-start);
+        row-gap: 5px;
+      }
+
+      &:nth-child(2) {
+        grid-column: 3/4;
+        background-color: $white;
+        color: $black;
+      }
+      &:nth-child(3) {
+        grid-column: 1/2;
+        background-color: #c32361;
+      }
+      &:nth-child(4) {
+        grid-column: 2/3;
+        background-color: $light-blue-3;
+      }
+      &:nth-child(5) {
+        grid-column: 3/4;
+        background: url("../pic/insta-bg.png");
+        background-size: cover;
+        background-position: center;
+      }
+      &:nth-child(6) {
+        grid-column: 1/2;
+        background-color: $dark-blue-2;
+      }
+      &:nth-child(7) {
+        grid-column: 3/4;
+        background-color: $dark-blue-1;
+      }
+    }
+  }
+}
+
+.main__title {
+  color: $light-blue-1;
+}
+
+@media screen and (max-width: 850px) {
+  .main__container {
+    width: max-content;
+    @include grid(repeat(2, 1fr), auto);
+  }
+  .main__container__card {
+    grid-column: auto !important;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main__container {
+    width: 400px;
+    gap: 15px;
+  }
+  .main__container__card {
+    min-width: 150px;
+    padding: 10px 15px;
+    @include flex(row, center, space-between);
+
+    img {
+      width: 30px;
+    }
+  }
+  .main__title {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .main__container {
+    width: 320px;
+  }
+  .main__container__card {
+    min-width: 100px !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .main__container {
+    width: 280px;
+  }
+  .main__container__card {
+    min-width: 100px !important;
+
+    &__title-box {
+      &__sub-title {
+        font-size: 0.5rem;
+      }
+      &__title {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .main__title {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,65 @@
+@import "../../../../sass/basic";
+
+// start of text container
+.header__text-container {
+  position: absolute;
+  top: 55%;
+  left: 70px;
+  transform: translateY(-50%);
+  z-index: 9;
+  color: #fff;
+  @include sizing(550px, auto);
+
+  &__title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 121%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    width: max-content;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 30px;
+    letter-spacing: 0.39px;
+    border-bottom: 1px solid $white;
+  }
+
+  &__list {
+    @include flex(column, flex-start, flex-start);
+    row-gap: 5px;
+  }
+}
+// end of text container
+@media screen and (max-width: 800px) {
+  .header__text-container {
+    width: max-content;
+    left: 20px;
+    &__title {
+      font-size: 2rem;
+      max-width: 300px;
+    }
+    &__subtitle {
+      margin-top: 10px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header__text-container {
+    top: 40%;
+    &__title {
+      font-size: 1.5rem;
+      max-width: 250px;
+    }
+    &__subtitle {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+  }
+}
